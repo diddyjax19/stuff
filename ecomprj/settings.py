@@ -9,18 +9,16 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+
 from pathlib import Path
 import os
 import dj_database_url
-
 
 if os.path.isfile("env.py"):
    import env
 
 
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,14 +27,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'smzAg4tCsjZgoKjeQD4lgWu9aG9UiIC4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
 
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['test1254.herokuapp.com/','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['c50commerce12.herokuapp.com','127.0.0.1','localhost']
 
 
 # Application definition
@@ -112,11 +110,13 @@ WSGI_APPLICATION = 'ecomprj.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://aifymxjr:XESphqT7VmYlfNbVUfzLxYXxFiZhsVCp@trumpet.db.elephantsql.com/aifymxjr',
+        default='postgres://fjmhlliu:PBgZ7F4LbCBpGO6pHajMJKT_kc75W-ja@trumpet.db.elephantsql.com/fjmhlliu',
         conn_max_age=600,
         conn_health_checks=True,
     )
 }
+
+
 
 
 # Password validation
